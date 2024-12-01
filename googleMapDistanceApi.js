@@ -25,7 +25,7 @@ function initAutocomplete() {
     });
   // Set initial restrict to the greater list of countries.
   originautocomplete.setComponentRestrictions({
-    'country': ['aus']
+      'country': ['ind']
   });
 
   destinationautocomplete = new google.maps.places.Autocomplete(
@@ -60,7 +60,9 @@ function geolocate() {
 function CalculatedRecommededDistance() {
   CalculateDistanceforAllAlternativeRoutes();
 
-  var origin = document.getElementById('originautocomplete').value;
+    var origin = document.getElementById('originautocomplete').value;
+   // var origin = 'Thiruchengodu, Tamil Nadu, India';
+    console.log(origin);
   var destination = document.getElementById('destinationautocomplete').value;
 
   var geocoder = new google.maps.Geocoder();

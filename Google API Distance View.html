@@ -4,7 +4,7 @@
   </h2>
 </div>
 <div id="locationField">
-  <input id="originautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"/>
+    <input id="originautocomplete" value="Thiruchengodu, Tamil Nadu, India" disabled="disabled" type="text" /><!--onFocus="geolocate()"-->
 </div>
 
 <div>
@@ -21,13 +21,13 @@
 </div>
 <br>
 <div>
-  <strong>Recommended Route Total Distance</strong>
+  Distance and Time : <div id="outputRecommended"></div>
 </div>
-<div id="outputRecommended"></div>
-<div>
-  <strong>Longeest Route Total Distance</strong>
-</div>
-<div id="output"></div>
+
+<!--<div>
+  Distance : <div id="output"></div>
+</div>-->
+
 
 <script src="googleMapDistanceApi.js"></script>
 <!-- Replace the value of the key parameter with your own API key. -->
