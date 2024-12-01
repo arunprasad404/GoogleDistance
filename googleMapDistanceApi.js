@@ -129,4 +129,42 @@ function CalculateDistanceforAllAlternativeRoutes() {
     var outputDiv = document.getElementById('output');
     outputDiv.innerHTML = Math.round(maxDistance[routes.length - 1]) + " KM";
   });
+    showmap();
+}
+
+
+function showmap() {
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+
+    var myOptions = {
+        zoom: 7,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var origin = document.getElementById('originautocomplete').value;  
+    console.log(origin);
+    var destination = document.getElementById('destinationautocomplete').value;
+    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+    directionsDisplay.setMap(map);
+
+    var request = {
+        origin: origin,
+        destination: destination,
+        travelMode: google.maps.DirectionsTravelMode.DRIVING
+    };
+
+    directionsService.route(request, function (response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+
+            // Display the distance:
+            //document.getElementById('distance').innerHTML +=
+            //    response.routes[0].legs[0].distance.value + " meters";
+
+            //// Display the duration:
+            //document.getElementById('duration').innerHTML +=
+            //    response.routes[0].legs[0].duration.value + " seconds";
+
+            directionsDisplay.setDirections(response);
+        }
+    });
 }

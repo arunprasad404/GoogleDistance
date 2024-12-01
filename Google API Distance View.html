@@ -1,28 +1,32 @@
 <div>
-  <h2>
-    Orign Location
-  </h2>
+    <h2>
+        Orign Location
+    </h2>
 </div>
 <div id="locationField">
     <input id="originautocomplete" value="Thiruchengodu, Tamil Nadu, India" disabled="disabled" type="text" /><!--onFocus="geolocate()"-->
 </div>
 
 <div>
-  <h2>
-    Destination Location
-  </h2>
+    <h2>
+        Destination Location
+    </h2>
 </div>
 <div id="locationField">
-  <input id="destinationautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"/>
+    <input id="destinationautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" />
 </div>
 <br>
 <div>
-  <input type='button' value="Find travelled distance" onclick="CalculatedRecommededDistance()"/>
+    <input type='button' value="Find travelled distance" onclick="CalculatedRecommededDistance()" />
 </div>
 <br>
 <div>
-  Distance and Time : <div id="outputRecommended"></div>
+    Distance and Time : <div id="outputRecommended"></div>
 </div>
+
+<div id="map" style="width: 700px; height: 600px;"></div>
+
+
 
 <!--<div>
   Distance : <div id="output"></div>
