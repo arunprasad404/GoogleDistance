@@ -80,15 +80,21 @@ function CalculatedRecommededDistance() {
   }, function(response, status) {
     var originList = response.originAddresses;
     var destinationList = response.destinationAddresses;
-    var outputDiv = document.getElementById('outputRecommended');
-    outputDiv.innerHTML = '';
+      //var outputDiv = document.getElementById('outputRecommended');
+      var outputDiv1 = document.getElementById('Distance');
+      var outputDiv2 = document.getElementById('Time');
+      //outputDiv.innerHTML = '';
+      outputDiv1.innerHTML = '';
+      outputDiv2.innerHTML = '';
     //Display distance recommended value
     for (var i = 0; i < originList.length; i++) {
       var results = response.rows[i].elements;
       for (var j = 0; j < results.length; j++) {
-        outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] +
-          ': ' + results[j].distance.text + ' in ' +
-          results[j].duration.text + '<br>';
+        //outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] +
+        //  ': ' + results[j].distance.text + ' in ' +
+        //      results[j].duration.text + '<br>';
+          outputDiv1.innerHTML += results[j].distance.text;
+          outputDiv2.innerHTML += results[j].duration.text;
       }
     }
   });
